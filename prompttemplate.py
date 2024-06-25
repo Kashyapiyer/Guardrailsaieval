@@ -23,8 +23,6 @@ qatemplate = """
                RULES: {rules}
 
                PROMPT: {prompt}
-
-               When providing your response, please ensure to include only the final answer in accordance with the rules mentioned above.
           """
 def guardpromptbuilder(modelname,prompt):
     try:
