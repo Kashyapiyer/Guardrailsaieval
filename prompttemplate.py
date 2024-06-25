@@ -28,11 +28,11 @@ def guardpromptbuilder(modelname,prompt):
     try:
       print(f"encountered {modelname}")
       if modelname == "TheBloke/Mistral-7B-Instruct-v0.2-AWQ":
-         prompt = mistralprompttemplate.format(prompt=prompt,commonrules=commonrules).strip()
+         prompt = qatemplate.format(prompt=prompt,commonrules=commonrules).strip()
          return f"<s>[INST]/n {prompt} /n[/INST] ANSWER:</s>"
          
       if modelname == "TheBloke/Llama-2-13B-chat-GPTQ":
-         prompt = mistralprompttemplate.format(prompt=prompt,commonrules=commonrules).strip()
+         prompt = qatemplate.format(prompt=prompt,commonrules=commonrules).strip()
          return f"<s>[INST] {{ prompt }} [/INST] {{ ANSWER: }}</s>"
     except Exception as e: 
       raise Exception(f"modeltemplate not found {e}")
